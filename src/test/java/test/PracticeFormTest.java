@@ -5,25 +5,20 @@ import org.junit.jupiter.api.Test;
 import pages.PracticeForm;
 
 
-
-
-
-
-
 public class PracticeFormTest extends BaseTest {
     PracticeForm practiceForm = new PracticeForm();
 
 
     @Test
     void successPracticeFormTest() {
-        practiceForm.OpenPage().
+        practiceForm.openPage().
                 setFirstName("Max").
                 lastNameInput("Gor").
                 userEmailInput("maxgor@gmail.com").
                 userNumberInput("1122334455").
                 userCurrentAdressInput("text text text").
                 genderWrapper("Male").
-                setDateOfBirth("01","October","1989").
+                setDateOfBirth("01", "October", "1989").
                 subjectInput("English").
                 hobbiesWrapper("Sports").
                 hobbiesWrapper("Music").uploadPicture("frost.jpeg").
@@ -49,12 +44,12 @@ public class PracticeFormTest extends BaseTest {
 
     @Test
     void checkRequiredFieldsTest() {
-        practiceForm.OpenPage().
+        practiceForm.openPage().
                 setFirstName("Max").
                 lastNameInput("Gor").
                 userNumberInput("1122334455").
                 genderWrapper("Male").
-                setDateOfBirth("01","October","1989").
+                setDateOfBirth("01", "October", "1989").
                 pressSubmit();
 
         practiceForm.checkResult("Student Name", "Max Gor")
@@ -63,18 +58,18 @@ public class PracticeFormTest extends BaseTest {
                 .checkResult("Date of Birth", "01 October,1989");
 
 
-
     }
+
     @Test
     void negativePracticeFormTest() {
-        practiceForm.OpenPage().
+        practiceForm.openPage().
                 setFirstName("Max").
                 lastNameInput("Gor").
                 userEmailInput("maxgor@gmail.com").
                 userNumberInput("aabbcceedd").
                 userCurrentAdressInput("text text text").
                 genderWrapper("Male").
-                setDateOfBirth("01","October","1989").
+                setDateOfBirth("01", "October", "1989").
                 subjectInput("English").
                 hobbiesWrapper("Sports").
                 hobbiesWrapper("Music").uploadPicture("frost.jpeg").

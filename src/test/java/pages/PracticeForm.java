@@ -27,9 +27,9 @@ public class PracticeForm {
             checkResult = $(".table-responsive");
 
 
-   CalendarComponent calendarComponent = new CalendarComponent();
+    CalendarComponent calendarComponent = new CalendarComponent();
 
-    public PracticeForm OpenPage() {
+    public PracticeForm openPage() {
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
@@ -53,11 +53,13 @@ public class PracticeForm {
         return this;
 
     }
+
     public PracticeForm userNumberInput(String value) {
         userNumberInput.setValue(value);
         return this;
 
     }
+
     public PracticeForm genderWrapper(String value) {
         genderWrapper.$(byText(value)).click();
         return this;
@@ -107,7 +109,7 @@ public class PracticeForm {
 
     }
 
-       public void pressSubmit() {
+    public void pressSubmit() {
         pressSubmit.pressEnter();
 
     }
@@ -118,7 +120,7 @@ public class PracticeForm {
         return this;
     }
 
-    public PracticeForm formResult () {
+    public PracticeForm formResult() {
         checkResult.shouldNotBe(Condition.visible);
         return this;
     }
