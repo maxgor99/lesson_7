@@ -21,8 +21,8 @@ public class PracticeForm {
             subjectInput = $("#subjectsInput"),
             uploadPicture = $("#uploadPicture"),
             hobbiesWrapper = $("#hobbiesWrapper"),
-            selectCity = $("#react-select-4-input"),
-            selectState = $("#react-select-3-input"),
+            selectCity = $("#city"),
+            selectState = $("#state"),
             pressSubmit = $("#submit"),
             checkResult = $(".table-responsive");
 
@@ -98,13 +98,15 @@ public class PracticeForm {
     }
 
     public PracticeForm selectState(String value) {
-        selectState.val(value).pressEnter();
+        selectState.click();
+        selectState.$(byText(value)).click();
         return this;
 
     }
 
     public PracticeForm selectCity(String value) {
-        selectCity.val(value).pressEnter();
+        selectCity.click();
+        selectCity.$(byText(value)).click();
         return this;
 
     }
